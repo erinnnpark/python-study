@@ -1,0 +1,77 @@
+#문자열처리함수
+python = "Python is Amazing"
+print(python.lower())
+print(python.upper())
+print(python[0].isupper())
+print(len(python))
+print(python.replace("Python","Java"))
+
+index = python.index("n") #n이 몇번째에 나오는지
+print(index)
+
+index = python.index("n",index + 1) #앞에서 찾은 인덱스+1, 즉 6번째 위치부터 계산해서 나오는 n의 위치
+print(index)
+
+print(python.find("n")) #5
+print(python.find("is")) #7
+
+print(python.find('Java')) #원하는값이 없을 때 -1 반환
+# print(python.index('Java')) #원하는 값이 없을 때 오류처리해서 그 다음 안 넘어감
+
+print(python.count("n")) #python에서 n이 총 몇 번 등장하는지
+
+#<문자열 포맷>
+print("a" + "b")
+print("a", 'b')
+
+#방법1
+print('나는 %d살입니다.' %20) #d =정수
+print('나는 %s을 좋아해요' %"파이썬") #s = string, 즉 문자열
+print("Apple은 %c로 시작해요."%"A") #c = character, 한 글자만
+# %s 는 대체로 가능
+print('나는 %s살입니다.' %20) 
+print("나는 %s색과 %s색을 좋아해요." %('파란','빨간'))
+#방법2
+print("나는 {}살입니다.".format(20))
+print('나는 {}색과 {}색을 좋아해요.'.format('파란','빨간'))
+print('나는 {0}색과 {1}색을 좋아해요.'.format('파란','빨간')) #순서 조절 가능 
+print('나는 {1}색과 {0}색을 좋아해요.'.format('파란','빨간'))
+
+#방법3
+print('나는 {age}살이며, {color}색을 좋아해요.'.format(age = 20, color="빨간"))
+print('나는 {age}살이며, {color}색을 좋아해요.'.format(color="빨간", age=20))
+
+#방법4
+age = 20
+color = "빨간"
+print(f"나는 {age}살이며, {color}색을 좋아해요")
+
+#탈출문자 \n: 줄바꿈 \" 또는 \' :문장내에서 큰따옴표 또는 작은 따옴표로 사용 가능
+print("백문이 불여일견 \n백견이 불여일타")
+print("저는 '나도코딩'입니다.")
+print('저는 "나도코딩"입니다.')
+print("저는 \"나도코딩\"입니다.")
+
+#\\:문장 내에서 \
+print("C:\\Users")
+
+#\r :커서를 맨 앞으로 이동
+print("Red Apple\rPine")
+#\b : 백스페이스(한글자 삭제)
+print("Redd\bApple")
+
+#\t:탭
+print("Red\tApple")
+
+#quiz
+# site = "http://naver.com"
+# site2 = site.replace("http://","")
+# site3 = site2[:site2.index(".")]
+# print(site3[:3] + str(len(site2)) + str(site2.count('e'))+"!")
+
+url = "http://naver.com"
+my_str = url.replace("http://","")
+my_str = my_str[:my_str.index(".")]
+#print(my_str) #naver
+password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
+print('{0}의 비밀번호는 {1}입니다.'.format(url,password))
